@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset = "ISO-8859-1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <title>Postitused</title>
+</head>
+<body>
+<div class="container">
+  <h1>Postitused</h1>
+	<div class="row col-md-7 table-responsive">
+		<table class="table">
+		  <thead>
+		  <tr>
+		    <th> nimi </th>
+		    <th> pealkiri </th>
+		    <th> sisu </th>
+		  </tr>
+		  </thead>
+		  <tbody>
+		  <tr th:if="${posts.empty}">
+		    <td colspan="2"> postitusi pole </td>
+		  </tr>
+		  <tr th:each="post : ${posts}">
+		    <td><span th:text="${post.user}"></span></td>
+		    <td><span th:text="${post.headline}"></span></td>
+		    <td><span th:text="${post.post}"></span></td>
+		
+		  </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

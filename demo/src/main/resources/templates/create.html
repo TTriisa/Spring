@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset = "ISO-8859-1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <title>Loo postitus</title>
+</head>
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/addpost}" th:object="${post}" method="post">
+
+        <p>Nimi <input type="text" th:field="*{user}" /></p>
+        <p>Pealkiri: <input type="text" th:field="*{headline}" /></p>
+        <p>Sisu: <input type="text" th:field="*{post}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
